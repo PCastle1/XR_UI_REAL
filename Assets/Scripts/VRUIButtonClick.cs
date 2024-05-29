@@ -1,28 +1,25 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.XR;
 using UnityEngine.UI;
 
 public class VRUIButtonClick : MonoBehaviour
 {
-    public float maxRayDistance = 10.0f; // Ray가 도달할 최대 거리
-    public LayerMask uiLayerMask; // UI 요소들이 있는 레이어
+    public XRNode rightHand; // 오른손 컨트롤러를 지정합니다.
+    public Button uiButton; // UI 버튼을 지정합니다.
 
-    // Update is called once per frame
-    void Update()
+    private InputDevice rightController;
+
+    private void Start()
     {
-        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger)) // "Fire1"은 Unity 입력 매니저에서 설정한 버튼 이름입니다. VR 컨트롤러 버튼에 맞게 변경해주세요.
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
+        rightController = InputDevices.GetDeviceAtXRNode(rightHand);
+    }
 
-            if (Physics.Raycast(ray, out hit, maxRayDistance, uiLayerMask))
-            {
-                Button button = hit.transform.GetComponent<Button>();
-                if (button)
-                {
-                    button.onClick.Invoke(); // 버튼이 클릭되었을 때 실행할 함수를 호출합니다.
-                }
-            }
+    private void Update()
+    {
+        if (rightController.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f)
+        {
+            uiButton.onClick.Invoke(); // 트리거 버튼이 눌리면 버튼 클릭 이벤트를 호출합니다.
+            Debug.Log(uiButton);
         }
     }
 }
