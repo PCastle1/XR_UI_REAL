@@ -21,7 +21,7 @@ public class SceneController : MonoBehaviour
         CompleteButton.onClick.AddListener(LoadSelectedScene);
     }
 
-    void ShowSelectionPanel()
+    public void ShowSelectionPanel()
     {
         StartPanel.SetActive(false);
         SelectionPanel.SetActive(true);
