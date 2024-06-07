@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using System.Collections.Generic;
 
-public class DraggableObject : MonoBehaviour
+public class DraggableObject1 : MonoBehaviour
 {
     public LayerMask placeLayer;
     public GameObject previewPrefab; // 설치 미리보기 프리팹
@@ -92,7 +92,7 @@ public class DraggableObject : MonoBehaviour
                     {
                         Debug.Log(hit.point);
                         objectInHand.transform.localScale = originalScale; // 크기를 원래대로 돌립니다.
-                        Vector3 newPosition = hit.point;
+                        Vector3 newPosition = hit.point + new Vector3(0, previewObject.transform.localScale.y, 0);
                         Debug.Log("Moving object to position: " + newPosition);
                         objectInHand.transform.position = newPosition;
                         isCarrying = false; // 이동 후 손에 들고 있는 상태를 해제합니다.
@@ -162,7 +162,7 @@ public class DraggableObject : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Controller.transform.position, Controller.transform.forward, out hit, Mathf.Infinity, placeLayer))
             {
-                Vector3 newPosition = hit.point;
+                Vector3 newPosition = hit.point + new Vector3(0, previewObject.transform.localScale.y, 0);
                 previewObject.transform.position = newPosition;
             }
         }
