@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3182115713558520780}
   - component: {fileID: 1983553012023897193}
   - component: {fileID: 4351050899104716963}
-  - component: {fileID: -4301320722373972378}
+  - component: {fileID: 3964615239963687390}
   m_Layer: 0
   m_Name: Single Bed (1)
   m_TagString: Untagged
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2838100977597839734}
-  m_LocalRotation: {x: -0.00093817373, y: -0.9999986, z: -0.00013867444, w: 0.0014005845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -285.55554, y: 3.0785913, z: 23.409582}
   m_LocalScale: {x: 5.050479, y: 3.1738095, z: 3.6923704}
   m_ConstrainProportionsScale: 0
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 242909814054364926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.016, y: 0.16, z: 0.107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1983553012023897193
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4301320722373972378
+--- !u!114 &3964615239963687390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,8 +177,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2838100977597839734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2826867a27c7f724d85885b7f27188e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e193d4968b70874b98d39b700df4f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redMaterial: {fileID: 2100000, guid: ade18993cf1278c4aaf3fc5958566bd9, type: 2}
-  greenMaterial: {fileID: 2100000, guid: 1650bb9f5cdc9664b92258d4f4bde4ff, type: 2}
+  placeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  previewPrefab: {fileID: 0}
+  Controller: {fileID: 0}
+  Haaand: {fileID: 0}
+  Shop: {fileID: 0}
+  redMaterial: {fileID: 0}
+  greenMaterial: {fileID: 0}
